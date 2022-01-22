@@ -4,7 +4,7 @@ Script to srape your smart electricity meter consumption data from [Elektrum](ht
 
 With recent updates from Elektrum side you also get NordPool hourly rate in the same data set.
 
-This is packaged as Python package that you can use in your projects. Initial development was done by Ēriks Klotiņš.
+This is packaged as Python package that you can use in your projects. Initial development of this package was done by [Ēriks Klotiņš](https://github.com/EriksKlotins/ha-elektrum).
 
 ## Example usage
 
