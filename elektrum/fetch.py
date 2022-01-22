@@ -1,11 +1,14 @@
 
-def fetch_daily_consumption(y,m,d, session):
-
+def fetch_daily_consumption(y, m, d, session, meter=''):
     # url = "https://mans.elektrum.lv/lv/majai/mani-parskati/viedo-skaititaju-paterinu-parskats/consumption.json?step=D&fromDate=2021-01-02&tillDate=&compareFromDate=2021-12-21&compareTillDate=&chartType=bar"
     fromDate = f'{y}-{m}-{d}'
     url = f"https://mans.elektrum.lv/lv/majai/mani-parskati/viedo-skaititaju-paterinu-parskats/consumption.json?step=D&fromDate={fromDate}"
+
+    if meter:
+        url = url + f"&object={meter}"
+    
     headers = {
-         "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
         "accept-language": "en-US,en;q=0.9,lv;q=0.8",
         "cache-control": "no-cache",
         "pragma": "no-cache",

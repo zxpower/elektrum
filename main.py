@@ -1,10 +1,8 @@
+import elektrum
 import requests
 import sys
-import elektrum_auth
-import elektrum_fetch
 
-
-# python3 main.py username 'password' 2021 3 1
+# python3 main.py username 'password' 2021 3 1 meterID
 
 # arguments
 #   username
@@ -12,11 +10,14 @@ import elektrum_fetch
 #   year
 #   month
 #   day
-
+#   meterID
 
 args = sys.argv
 session = requests.session()
-token = elektrum_auth.get_auth_token(session)
-elektrum_auth.authenticate(args[1], args[2],token, session)
-result = elektrum_fetch.fetch_daily_consumption(args[3],args[4],args[5], session)
+token = elektrum.get_auth_token(session)
+elektrum.authenticate(args[1], args[2], token, session)
+meter = ''
+if len(args) > 6:
+    meter = args[6]
+result = elektrum.fetch_daily_consumption(args[3], args[4], args[5], session, meter)
 print(result)

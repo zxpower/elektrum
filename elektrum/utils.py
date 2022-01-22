@@ -1,6 +1,5 @@
   
 def extract_one(text, start_str, end_str, offset = 0, inclusive = True):
-    
     start = text.find(start_str, offset)
     end = text.find(end_str, start + len(start_str)) + len(end_str)
     if start < 0 or end < 0:
@@ -9,7 +8,8 @@ def extract_one(text, start_str, end_str, offset = 0, inclusive = True):
         return text[start:end], start, end
     else:
         return text[start+len(start_str):end-len(end_str)], start, end
-    
+
+
 def extract_all(text, start_str, end_str, offset = 0, inclusive = True):
     result = []
     while True:
@@ -19,4 +19,3 @@ def extract_all(text, start_str, end_str, offset = 0, inclusive = True):
         result.append(tmp)
         offset = end
     return result
-    
