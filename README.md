@@ -1,6 +1,6 @@
 # Elektrum Electricity Consumption Scraper
 
-Script to srape your smart electricity meter consumption data from [Elektrum](https://elektrum.lv) website. To get this done you'll need to register in Elektrum using email and password. As well if you have multiple smart electricity meters then you'll need to get all their system IDs because otherwise you'll get only first one.
+Script to scrape your smart electricity meter consumption data from [Elektrum](https://elektrum.lv) website. To get this done you'll need to register in Elektrum using email and password. As well if you have multiple smart electricity meters then you'll need to get all their system IDs because otherwise you'll get only first one.
 
 With recent updates from Elektrum side you also get NordPool hourly rate in the same data set.
 
