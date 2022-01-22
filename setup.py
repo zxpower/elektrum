@@ -1,11 +1,10 @@
-import setuptools
+from setuptools import setup
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
-setuptools.setup(name='elektrum',
+setup(name='elektrum',
     version='0.1',
-    description='Elektrum Electricity Consumption Scraper',
     url='https://github.com/zxpower/ha-elektrum',
     author='zxpower',
     author_email='reinholds@zviedris.lv',
@@ -17,7 +16,6 @@ setuptools.setup(name='elektrum',
         "License :: OSI Approved :: Apache License",
         "Operating System :: OS Independent",
     ],
-    package_dir={"": "elektrum"},
     packages=['elektrum'],
     python_requires=">=3.6",
 )
