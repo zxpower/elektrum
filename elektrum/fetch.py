@@ -1,8 +1,7 @@
-
 def fetch_daily_consumption(y, m, d, session, meter=''):
     # url = "https://mans.elektrum.lv/lv/majai/mani-parskati/viedo-skaititaju-paterinu-parskats/consumption.json?step=D&fromDate=2021-01-02&tillDate=&compareFromDate=2021-12-21&compareTillDate=&chartType=bar"
-    fromDate = f'{y}-{m}-{d}'
-    url = f"https://mans.elektrum.lv/lv/majai/mani-parskati/viedo-skaititaju-paterinu-parskats/consumption.json?step=D&fromDate={fromDate}"
+    from_date = f'{y}-{m}-{d}'
+    url = f"https://mans.elektrum.lv/lv/majai/mani-parskati/viedo-skaititaju-paterinu-parskats/consumption.json?step=D&fromDate={from_date}"
 
     if meter:
         url = url + f"&object={meter}"
@@ -25,6 +24,6 @@ def fetch_daily_consumption(y, m, d, session, meter=''):
 
     if response.status_code == 200:
         return response.json()
-    else:
-        print('Something went wrong! HTTP', response.status_code)
-        return None
+    
+    print('Something went wrong! HTTP', response.status_code)
+    return None

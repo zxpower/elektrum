@@ -1,5 +1,5 @@
 from .utils import extract_all
-    
+
 def get_auth_token(session):
     headers={
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.1 Safari/605.1.15',
@@ -11,7 +11,7 @@ def get_auth_token(session):
     else:
         print('Something went wrong!', response.status_code)
 
-   
+
 def authenticate(username, password ,token, session):
     login_params = {
         'email':  username,
@@ -38,5 +38,5 @@ def authenticate(username, password ,token, session):
     response = session.post('https://id.elektrum.lv/api/v1/authentication/credentials/authenticate', data=login_params, headers=headers)
     if response.status_code == 200:
         return True
-    else:
-        print('Something went wrong!', response.status_code)
+
+    print('Something went wrong!', response.status_code)

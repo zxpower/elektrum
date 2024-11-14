@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(name='elektrum',
-    version='0.1',
+    version='0.2',
     url='https://github.com/zxpower/elektrum',
     author='Reinholds Zviedris (zxpower)',
     author_email='reinholds@zviedris.lv',
