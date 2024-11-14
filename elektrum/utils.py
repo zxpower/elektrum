@@ -1,4 +1,3 @@
-  
 def extract_one(text, start_str, end_str, offset = 0, inclusive = True):
     start = text.find(start_str, offset)
     end = text.find(end_str, start + len(start_str)) + len(end_str)
